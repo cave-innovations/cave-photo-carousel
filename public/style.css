@@ -1,0 +1,40 @@
+body {
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.gallery {
+  display: flex;
+  height: 478.66666666666663px;
+  flex-flow: row;
+  width: 100%;
+}
+
+.large-container {
+  display: flex;
+  height: 478.66666666666663px;
+  width: 50%;
+}
+.small-container {
+  display: flex;
+  height: 478.66666666666663px;
+  width: 50%;
+  flex-flow: row wrap;
+}
+
+.gallery-item-large {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border: 1px solid rgb(83, 83, 83);
+}
+
+.gallery-item-small {
+  display: flex;
+  height: 49.8%;
+  width: 49.7%;
+  border: 1px solid rgb(83, 83, 83);
+}
+
