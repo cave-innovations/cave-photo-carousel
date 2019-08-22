@@ -1,18 +1,19 @@
 import React from 'react';
 import GalleryItemLrg from './GalleryItemLrg.jsx';
 import GalleryItemSml from './GalleryItemSml.jsx';
+import styles from '../../styles/Gallery.css';
 
 const Gallery = (props) => (
-  <div className="gallery">
-    <div className="large-container">
+  <div className={styles.gallery}>
+    <div className={styles.largeContainer}>
       <GalleryItemLrg />
     </div>
-    <div className="small-container">
+    <div className={styles.smallContainer}>
       <GalleryItemSml />
       <GalleryItemSml />
       <GalleryItemSml />
       <GalleryItemSml />
-      <button className="view-photos">View Photos</button>
+      <button className={styles.viewPhotos}>View Photos</button>
     </div>
   </div>
 )
