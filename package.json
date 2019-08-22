@@ -20,6 +20,7 @@
     "react-redux": "^7.1.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
+    "styled-components": "^4.3.2",
     "thunk": "0.0.1"
   },
   "devDependencies": {
@@ -27,8 +28,10 @@
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "css-loader": "^3.2.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "nodemon": "^1.19.1",
+    "style-loader": "^1.0.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"
   }

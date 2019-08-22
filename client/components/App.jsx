@@ -1,5 +1,5 @@
 import React from 'react';
-import Gallery from './Gallery/Gallery.js';
+import Gallery from './Gallery/Gallery.jsx';
 
 class App extends React.Component {
   constructor(props){

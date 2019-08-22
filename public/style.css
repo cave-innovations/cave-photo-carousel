@@ -22,19 +22,49 @@ body {
   height: 478.66666666666663px;
   width: 50%;
   flex-flow: row wrap;
+  position: relative;
+}
+
+.gallery-item-large-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border: 1px solid rgb(83, 83, 83);
+  overflow: hidden;
 }
 
 .gallery-item-large {
   display: flex;
   height: 100%;
   width: 100%;
-  border: 1px solid rgb(83, 83, 83);
+  transition: transform .5s;
 }
 
-.gallery-item-small {
+.gallery-item-small-container {
   display: flex;
   height: 49.8%;
   width: 49.7%;
   border: 1px solid rgb(83, 83, 83);
+  overflow: hidden;
 }
 
+.gallery-item-small {
+  display: flex;
+  height: 101%;
+  width: 101%;
+  transition: transform .5s;
+}
+
+.gallery-item-large:hover {
+  transform: scale(1.05)
+}
+
+.gallery-item-small:hover {
+  transform: scale(1.05)
+}
+
+.view-photos {
+  position: absolute;
+  top: 92%;
+  left: 85%;
+}
