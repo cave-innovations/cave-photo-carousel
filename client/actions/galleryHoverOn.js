@@ -1,6 +1,6 @@
 const galleryHoverOn = () => ({
   galleryHover: true,
-  type: 'GALLERY_HOVER'
-})
+  type: 'GALLERY_HOVER',
+});
 
 export default galleryHoverOn;
