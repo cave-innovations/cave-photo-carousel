@@ -1,22 +1,12 @@
 import React from 'react';
 import Gallery from './Gallery/Gallery.jsx';
 import styled from 'styled-components';
+import GalleryContainer from '../containers/GalleryContainer';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        <Gallery />
-      </div>
-    );
-  }
-}
+const App = (props) => (
+  <div>
+    <GalleryContainer />
+  </div>
+)
 
 export default App;
