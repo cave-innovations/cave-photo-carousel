@@ -19,10 +19,22 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]',
-      },
+      // {
+      //   test: /\.css$/i,
+      //   loader: ['style-loader', 'css-loader'],
+      // },
+      // {
+      //   test: /\.module\.css$/i,
+      //   use: [
+      //     'style-loader',
+      //     {
+      //       loader: 'css-loader',
+      //       options: {
+      //         modules: true,
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
 };
