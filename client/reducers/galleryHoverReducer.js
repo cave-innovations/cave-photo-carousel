@@ -7,6 +7,6 @@ const galleryHoverReducer = (state, action) => {
     default:
       return state;
   }
-}
+};
 
 export default galleryHoverReducer;

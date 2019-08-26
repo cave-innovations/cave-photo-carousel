@@ -1,0 +1,21 @@
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/cave', { useNewUrlParser: true });
+
+const cavePhotosSchema = mongoose.Schema({
+  listingId: Number,
+  main: String,
+  photos: [String],
+  description: String,
+  totalPhotos: Number,
+}, { collection: 'cave' });
+
+const CavePhotos = mongoose.model('cave', cavePhotosSchema);
+
+const getCavePhotos = (num, callback) => {
+  CavePhotos.find({ listingId: num }, (err, data) => {
+    callback(data);
+  });
+};
+
+module.exports.getCavePhotos = getCavePhotos;

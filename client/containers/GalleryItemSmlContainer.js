@@ -1,2 +1,2 @@
 import { connect } from 'react-redux';
-import GalleryItemSml from '../components/GalleryItemSml.jsx';
+import GalleryItemSml from '../components/Gallery/GalleryItemSml';

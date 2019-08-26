@@ -1,20 +1,20 @@
 import React from 'react';
-import Gallery from './Gallery/Gallery.jsx';
+import Gallery from './Gallery/Gallery';
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
 
-    }
+    };
   }
 
   render() {
-    return(
+    return (
       <div>
         <Gallery />
       </div>
-    )
+    );
   }
 }
 

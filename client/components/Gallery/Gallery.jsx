@@ -1,6 +1,6 @@
 import React from 'react';
-import GalleryItemLrg from './GalleryItemLrg.jsx';
-import GalleryItemSml from './GalleryItemSml.jsx';
+import GalleryItemLrg from './GalleryItemLrg';
+import GalleryItemSml from './GalleryItemSml';
 import styles from '../../styles/Gallery.css';
 
 const Gallery = (props) => (
@@ -13,9 +13,9 @@ const Gallery = (props) => (
       <GalleryItemSml />
       <GalleryItemSml />
       <GalleryItemSml />
-      <button className={styles.viewPhotos}>View Photos</button>
+      <button type="button" className={styles.viewPhotos}>View Photos</button>
     </div>
   </div>
-)
+);
 
 export default Gallery;
