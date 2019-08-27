@@ -26,21 +26,26 @@ const GalleryItemLarge = styled.img`
 //   height: 100%;
 //   width: 100%;
 //   filter: brightness(50%);
-//   transition: transform .5s, filter .5s;
+//   transition: filter .5s;
 
 //   &:hover {
-//     transform: scale(1.05);
 //     filter: brightness(100%);
 //   }
 // `;
 
 
 const GalleryItemLrg = ({ galleryHover, galleryHoverItem, handleHoverItem }) => (
-  <GalleryItemLargeContainer onMouseOver={(e) => {handleHoverItem(parseInt(e.target.id))}} >
-    {galleryHover && (galleryHoverItem !== 1) && <GalleryItemLarge style={{"filter": "brightness(50%)"}} id="1" alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" />}
-    {galleryHover && (galleryHoverItem === 1) && <GalleryItemLarge id="1" alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" />}
-    {!galleryHover && <GalleryItemLarge id="1" alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" />}
-  </GalleryItemLargeContainer>
+  <div>
+    {galleryHover && galleryHoverItem !== 1 && <GalleryItemLargeContainer style={{"filter": "brightness(50%)"}} onMouseOver={(e) => {handleHoverItem(parseInt(e.target.id))}} >
+      <GalleryItemLarge id="1" alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" />
+    </GalleryItemLargeContainer>}
+    {galleryHover && galleryHoverItem === 1 && <GalleryItemLargeContainer onMouseOver={(e) => {handleHoverItem(parseInt(e.target.id))}} >
+      <GalleryItemLarge id="1" alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" />
+    </GalleryItemLargeContainer>}
+    {!galleryHover && <GalleryItemLargeContainer onMouseOver={(e) => {handleHoverItem(parseInt(e.target.id))}} >
+      <GalleryItemLarge id="1" alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" />
+    </GalleryItemLargeContainer>}
+  </div>
 );
 
 export default GalleryItemLrg;

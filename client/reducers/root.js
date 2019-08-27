@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
-import galleryHover from './galleryHoverReducer';
-import galleryHoverItem from './galleryHoverItemReducer';
+import galleryHover from './galleryHoverReducer.js';
+import galleryHoverItem from './galleryHoverItemReducer.js';
+import modalView from './modalViewReducer.js';
 
-var rootReducer = combineReducers({galleryHover: galleryHover, galleryHoverItem: galleryHoverItem});
+var rootReducer = combineReducers({galleryHover: galleryHover, galleryHoverItem: galleryHoverItem, isClicked: modalView});
 
 export default rootReducer;

@@ -53,7 +53,8 @@ const ButtonStyle = styled.button`
   }
 `;
 
-const Gallery = ({ handleHoverOff, handleHoverOn, handleHoverItemNull }) => (
+const Gallery = ({ handleHoverOff, handleHoverOn, handleHoverItemNull, modalView }) => (
+  <div>
   <GalleryContainer onMouseOver={handleHoverOn} onMouseLeave={() => {handleHoverOff(); handleHoverItemNull()}} >
     <LargerContainer>
       <GalleryItemLrgContainer />
@@ -63,9 +64,10 @@ const Gallery = ({ handleHoverOff, handleHoverOn, handleHoverItemNull }) => (
       <GalleryItemSmlContainer id="3"/>
       <GalleryItemSmlContainer id="4"/>
       <GalleryItemSmlContainer id="5"/>
-      <ButtonStyle type="button">View Photos</ButtonStyle>
     </SmallContainer>
   </GalleryContainer>
+  <ButtonStyle type="button" onClick={modalView}>View Photos</ButtonStyle>
+  </div>
 );
 
 export default Gallery;
