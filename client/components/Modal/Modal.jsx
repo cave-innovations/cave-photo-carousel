@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import MainDisplay from './MainDisplay.jsx';
 import Carousel from './Carousel.jsx';
+import Description from './Description.jsx';
 import data from '../../data/exampledata.js';
 
 const ModalView = styled.div`
@@ -45,7 +46,7 @@ const ModalLeftContainer = styled.div`
   width: 73.3333333333%;
 `;
 
-const ModalRightContainer = styled.div`
+const ModalCarouselContainer = styled.div`
   display: flex;
   height: 100%;
   width: 26.6666666667%;
@@ -58,6 +59,7 @@ class Modal extends React.Component {
       currentIndex: 0,
       current: data.exampleData.photos[0],
       photos: data.exampleData.photos,
+      description: data.exampleData.description,
     };
     this.nextPhoto = this.nextPhoto.bind(this);
     this.prevPhoto = this.prevPhoto.bind(this);
@@ -113,9 +115,10 @@ class Modal extends React.Component {
             <path d="m23.25 24c-.19 0-.38-.07-.53-.22l-10.72-10.72-10.72 10.72c-.29.29-.77.29-1.06 0s-.29-.77 0-1.06l10.72-10.72-10.72-10.72c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0l10.72 10.72 10.72-10.72c.29-.29.77-.29 1.06 0s .29.77 0 1.06l-10.72 10.72 10.72 10.72c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22" fillRule="evenodd" />
           </svg>
         </XButton>
-        <ModalRightContainer>
+        <ModalCarouselContainer>
           <Carousel currentIndex={this.state.currentIndex} current={this.state.current} photos={this.state.photos} clickPhoto={this.clickPhoto} />
-        </ModalRightContainer>
+        </ModalCarouselContainer>
+        <Description description={this.state.description} currentIndex={this.state.currentIndex} photos={this.state.photos} />
       </ModalView>
     );
   }
