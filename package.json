@@ -59,7 +59,11 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "setupFiles": ["./__test__/setupTests.js"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./__test__/setupTests.js"
+    ]
   }
 }

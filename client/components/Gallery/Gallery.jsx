@@ -1,7 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 import GalleryItemLrg from './GalleryItemLrg.jsx';
 import GalleryItemSml from './GalleryItemSml.jsx';
-import styled from 'styled-components';
 import GalleryItemLrgContainer from '../../containers/GalleryItemLrgContainer';
 import GalleryItemSmlContainer from '../../containers/GalleryItemSmlContainer';
 
@@ -53,20 +53,22 @@ const ButtonStyle = styled.button`
   }
 `;
 
-const Gallery = ({ handleHoverOff, handleHoverOn, handleHoverItemNull, modalView }) => (
+const Gallery = ({
+  handleHoverOff, handleHoverOn, handleHoverItemNull, modalView,
+}) => (
   <div>
-  <GalleryContainer onMouseOver={handleHoverOn} onMouseLeave={() => {handleHoverOff(); handleHoverItemNull()}} >
-    <LargerContainer>
-      <GalleryItemLrgContainer />
-    </LargerContainer>
-    <SmallContainer>
-      <GalleryItemSmlContainer id="2" />
-      <GalleryItemSmlContainer id="3"/>
-      <GalleryItemSmlContainer id="4"/>
-      <GalleryItemSmlContainer id="5"/>
-    </SmallContainer>
-  </GalleryContainer>
-  <ButtonStyle type="button" onClick={modalView}>View Photos</ButtonStyle>
+    <GalleryContainer onMouseOver={handleHoverOn} onMouseLeave={() => { handleHoverOff(); handleHoverItemNull(); }}>
+      <LargerContainer>
+        <GalleryItemLrgContainer />
+      </LargerContainer>
+      <SmallContainer>
+        <GalleryItemSmlContainer id="2" />
+        <GalleryItemSmlContainer id="3" />
+        <GalleryItemSmlContainer id="4" />
+        <GalleryItemSmlContainer id="5" />
+      </SmallContainer>
+    </GalleryContainer>
+    <ButtonStyle type="button" onClick={modalView}>View Photos</ButtonStyle>
   </div>
 );
 
