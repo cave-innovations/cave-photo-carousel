@@ -9,5 +9,5 @@ ReactDOM.render(
   <Provider store={store}>
     <AppContainer />
   </Provider>,
-  document.getElementById('app')
- );
+  document.getElementById('app'),
+);

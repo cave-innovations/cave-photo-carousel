@@ -1,4 +1,4 @@
-module.exports.exampleData = {
+module.exports.exampleData = [{
   photos: [
     'https://photo-carousel.s3-us-west-1.amazonaws.com/building-5.jpeg',
     'https://photo-carousel.s3-us-west-1.amazonaws.com/building-74.jpeg',
@@ -40,4 +40,4 @@ module.exports.exampleData = {
   main: 'https://photo-carousel.s3-us-west-1.amazonaws.com/building-5.jpeg',
   description: 'ANIMI at Ashashire',
   totalPhotos: 34,
-};
+}];

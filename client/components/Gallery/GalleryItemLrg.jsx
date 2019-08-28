@@ -34,17 +34,25 @@ const GalleryItemLarge = styled.img`
 // `;
 
 
-const GalleryItemLrg = ({ galleryHover, galleryHoverItem, handleHoverItem }) => (
+const GalleryItemLrg = ({
+  galleryHover, galleryHoverItem, handleHoverItem, modalView, change, photo,
+}) => (
   <div>
-    {galleryHover && galleryHoverItem !== 1 && <GalleryItemLargeContainer style={{"filter": "brightness(50%)"}} onMouseOver={(e) => {handleHoverItem(parseInt(e.target.id))}} >
-      <GalleryItemLarge id="1" alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" />
-    </GalleryItemLargeContainer>}
-    {galleryHover && galleryHoverItem === 1 && <GalleryItemLargeContainer onMouseOver={(e) => {handleHoverItem(parseInt(e.target.id))}} >
-      <GalleryItemLarge id="1" alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" />
-    </GalleryItemLargeContainer>}
-    {!galleryHover && <GalleryItemLargeContainer onMouseOver={(e) => {handleHoverItem(parseInt(e.target.id))}} >
-      <GalleryItemLarge id="1" alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" />
-    </GalleryItemLargeContainer>}
+    {galleryHover && galleryHoverItem !== 1 && (
+    <GalleryItemLargeContainer style={{ filter: 'brightness(50%)' }} onMouseOver={(e) => { handleHoverItem(parseInt(e.target.id)); }} onClick={() => { modalView(); change(0); }}>
+      <GalleryItemLarge id="1" alt="" src={photo} />
+    </GalleryItemLargeContainer>
+    )}
+    {galleryHover && galleryHoverItem === 1 && (
+    <GalleryItemLargeContainer onMouseOver={(e) => { handleHoverItem(parseInt(e.target.id)); }} onClick={() => { modalView(); change(0); }}>
+      <GalleryItemLarge id="1" alt="" src={photo} />
+    </GalleryItemLargeContainer>
+    )}
+    {!galleryHover && (
+    <GalleryItemLargeContainer onMouseOver={(e) => { handleHoverItem(parseInt(e.target.id)); }} onClick={() => { modalView(); change(0); }}>
+      <GalleryItemLarge id="1" alt="" src={photo} />
+    </GalleryItemLargeContainer>
+    )}
   </div>
 );
 

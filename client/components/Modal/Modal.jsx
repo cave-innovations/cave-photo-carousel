@@ -57,42 +57,58 @@ class Modal extends React.Component {
     super(props);
     this.state = {
       currentIndex: 0,
-      current: data.exampleData.photos[0],
-      photos: data.exampleData.photos,
-      description: data.exampleData.description,
+      current: '',
+      photos: [],
+      description: '',
     };
     this.nextPhoto = this.nextPhoto.bind(this);
     this.prevPhoto = this.prevPhoto.bind(this);
     this.clickPhoto = this.clickPhoto.bind(this);
   }
 
+  componentDidMount() {
+    this.setState({
+      current: this.props.listingData.photos[0],
+      photos: this.props.listingData.photos,
+      description: this.props.listingData.description,
+    });
+  }
+
+  componentDidUpdate() {
+    if (this.state.currentIndex !== this.props.currentIndex) {
+      this.setState({
+        currentIndex: this.props.currentIndex,
+      });
+    }
+  }
+
   nextPhoto() {
-    let newIndex = this.state.currentIndex + 1;
+    let newIndex = this.props.currentIndex + 1;
     if (newIndex === this.state.photos.length) {
       newIndex = 0;
     }
+    this.props.change(newIndex);
     this.setState({
-      currentIndex: newIndex,
-      current: data.exampleData.photos[newIndex],
+      current: this.props.listingData.photos[newIndex],
     });
   }
 
   prevPhoto() {
-    let newIndex = this.state.currentIndex - 1;
+    let newIndex = this.props.currentIndex - 1;
     if (newIndex < 0) {
       newIndex = this.state.photos.length - 1;
     }
+    this.props.change(newIndex);
     this.setState({
-      currentIndex: newIndex,
-      current: data.exampleData.photos[newIndex],
+      current: this.props.listingData.photos[newIndex],
     });
   }
 
   clickPhoto(e) {
     const newIndex = parseInt(e);
+    this.props.change(newIndex);
     this.setState({
-      currentIndex: newIndex,
-      current: data.exampleData.photos[newIndex],
+      current: this.props.listingData.photos[newIndex],
     });
   }
 
@@ -100,7 +116,7 @@ class Modal extends React.Component {
     return (
       <ModalView>
         <ModalLeftContainer>
-          <MainDisplay prev={this.prevPhoto} next={this.nextPhoto} current={this.state.current} />
+          <MainDisplay prev={this.prevPhoto} next={this.nextPhoto} current={this.state.photos[this.state.currentIndex]} />
         </ModalLeftContainer>
         <XButton onClick={this.props.modalView}>
           <svg
@@ -116,9 +132,9 @@ class Modal extends React.Component {
           </svg>
         </XButton>
         <ModalCarouselContainer>
-          <Carousel currentIndex={this.state.currentIndex} current={this.state.current} photos={this.state.photos} clickPhoto={this.clickPhoto} />
+          <Carousel currentIndex={this.props.currentIndex} current={this.state.current} photos={this.state.photos} clickPhoto={this.clickPhoto} />
         </ModalCarouselContainer>
-        <Description description={this.state.description} currentIndex={this.state.currentIndex} photos={this.state.photos} />
+        <Description description={this.state.description} currentIndex={this.props.currentIndex} photos={this.state.photos} />
       </ModalView>
     );
   }

@@ -20,11 +20,13 @@ const GalleryItemSmall = styled.img`
   }
 `;
 
-const GalleryItemSml = ({ galleryHover, galleryHoverItem, handleHoverItem, id }) => (
-  <GalleryItemSmallContainer onMouseOver={(e) => {handleHoverItem(parseInt(e.target.id))}}>
-    {galleryHover && (galleryHoverItem !== parseInt(id)) && <GalleryItemSmall id={id} style={{"filter": "brightness(50%)"}} alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" />}
-    {galleryHover && (galleryHoverItem === parseInt(id)) && <GalleryItemSmall id={id} alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" />}
-    {!galleryHover && <GalleryItemSmall id={id} alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" />}
+const GalleryItemSml = ({
+  galleryHover, galleryHoverItem, handleHoverItem, id, modalView, change, photo,
+}) => (
+  <GalleryItemSmallContainer onMouseOver={(e) => { handleHoverItem(parseInt(e.target.id)); }} onClick={() => { modalView(); change(parseInt(id) - 1); }}>
+    {galleryHover && (galleryHoverItem !== parseInt(id)) && <GalleryItemSmall id={id} style={{ filter: 'brightness(50%)' }} alt="" src={photo} />}
+    {galleryHover && (galleryHoverItem === parseInt(id)) && <GalleryItemSmall id={id} alt="" src={photo} />}
+    {!galleryHover && <GalleryItemSmall id={id} alt="" src={photo} />}
     {/* <GalleryItemSmall id={id} alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" /> */}
   </GalleryItemSmallContainer>
 );
