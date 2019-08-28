@@ -64,9 +64,11 @@ class Modal extends React.Component {
     this.nextPhoto = this.nextPhoto.bind(this);
     this.prevPhoto = this.prevPhoto.bind(this);
     this.clickPhoto = this.clickPhoto.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   componentDidMount() {
+    window.addEventListener('keydown', this.handleKeyDown);
     this.setState({
       current: this.props.listingData.photos[0],
       photos: this.props.listingData.photos,
@@ -79,6 +81,25 @@ class Modal extends React.Component {
       this.setState({
         currentIndex: this.props.currentIndex,
       });
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.handleKeyDown);
+  }
+
+  handleKeyDown(event) {
+    switch (event.code) {
+      case 'ArrowLeft':
+        this.prevPhoto();
+        break;
+      case 'ArrowRight':
+        this.nextPhoto();
+        break;
+      case 'Escape':
+        this.props.modalView();
+        break;
+      default:
     }
   }
 
