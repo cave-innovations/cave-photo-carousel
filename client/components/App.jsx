@@ -5,7 +5,6 @@ import Gallery from './Gallery/Gallery.jsx';
 import GalleryContainer from '../containers/GalleryContainer';
 import Modal from './Modal/Modal.jsx';
 import ModalContainer from '../containers/ModalContainer';
-import exampleData from '../data/exampleData.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,6 +16,7 @@ class App extends React.Component {
     this.changeCurrentIndex = this.changeCurrentIndex.bind(this);
   }
 
+  // parses uri to find listing #. Gets data for that listing from database and sets 'listingData' state in redux store
   componentDidMount() {
     const listingNum = parseInt(document.baseURI.slice(22, document.baseURI.length - 1));
     axios.get(`/api/photos/${listingNum}`)
@@ -25,6 +25,7 @@ class App extends React.Component {
       });
   }
 
+  // Renders app once 'listingData' state in redux store and data state has been updated
   componentDidUpdate(prevProps) {
     if (this.props.listingData !== prevProps.listingData) {
       this.setState({
@@ -33,6 +34,7 @@ class App extends React.Component {
     }
   }
 
+  // Sets photo index number for the whole app
   changeCurrentIndex(num) {
     this.setState({
       currentIndex: num,
@@ -40,6 +42,7 @@ class App extends React.Component {
   }
 
   render() {
+    // Renders nothing until the 'listingData' state in the redux store has been updated by componentDidMount
     if (this.state.data.length === 0) {
       return (
         <div />

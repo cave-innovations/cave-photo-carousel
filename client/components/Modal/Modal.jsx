@@ -18,8 +18,8 @@ const ModalView = styled.div`
 
 const XButton = styled.button`
   position: absolute;
-  top: 8.8%;
-  left: 93.95%;
+  top: 8.3%;
+  left: 93.9%;
   align-self: right;
   cursor: pointer  !important;
   background-color: transparent !important;
