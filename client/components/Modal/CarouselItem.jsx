@@ -25,7 +25,7 @@ border: 2px solid #474747;
 `;
 
 const CarouselItem = (props) => (
-  <div>
+  <div id="carousel-item">
     {props.current === props.index && <CurrentItem id={props.index} src={props.photo} />}
     {props.current !== props.index && <Item id={props.index} src={props.photo} onClick={(e) => { props.clickPhoto(e.target.id); }} />}
   </div>

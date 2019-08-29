@@ -54,22 +54,21 @@ const ButtonStyle = styled.button`
 `;
 
 const Gallery = ({
-  handleHoverOff, handleHoverOn, handleHoverItemNull, modalView,
+  handleHoverOff, handleHoverOn, handleHoverItemNull, modalView, change, listingData, data,
 }) => (
   <div>
     <GalleryContainer onMouseOver={handleHoverOn} onMouseLeave={() => { handleHoverOff(); handleHoverItemNull(); }}>
       <LargerContainer>
-        <GalleryItemLrgContainer />
+        <GalleryItemLrgContainer modalView={modalView} change={change} photo={data.photos[0]} />
       </LargerContainer>
       <SmallContainer>
-        <GalleryItemSmlContainer id="2" />
-        <GalleryItemSmlContainer id="3" />
-        <GalleryItemSmlContainer id="4" />
-        <GalleryItemSmlContainer id="5" />
+        <GalleryItemSmlContainer id="2" modalView={modalView} change={change} photo={data.photos[1]} />
+        <GalleryItemSmlContainer id="3" modalView={modalView} change={change} photo={data.photos[2]} />
+        <GalleryItemSmlContainer id="4" modalView={modalView} change={change} photo={data.photos[3]} />
+        <GalleryItemSmlContainer id="5" modalView={modalView} change={change} photo={data.photos[4]} />
       </SmallContainer>
     </GalleryContainer>
     <ButtonStyle type="button" onClick={modalView}>View Photos</ButtonStyle>
   </div>
 );
-
 export default Gallery;

@@ -11,7 +11,8 @@
     "server:dev": "nodemon server/server.js",
     "react:dev": "webpack -d --watch",
     "seed": "node database/seed.js",
-    "test": "jest"
+    "test": "jest --env=jsdom",
+    "test:coverage": "npm test -- --coverage"
   },
   "dependencies": {
     "aws-sdk": "^2.514.0",
@@ -38,6 +39,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^8.2.6",
     "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
@@ -50,8 +52,12 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "jest": "^24.9.0",
+    "jsdom": "^15.1.1",
     "nodemon": "^1.19.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.9.0",
     "react-to-html-webpack-plugin": "^2.2.0",
+    "redux-mock-store": "^1.5.3",
     "style-loader": "^1.0.0",
     "supertest": "^4.0.2",
     "webpack": "^4.39.2",

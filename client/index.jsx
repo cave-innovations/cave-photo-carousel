@@ -5,9 +5,13 @@ import App from './components/App.jsx';
 import store from './store/store.js';
 import AppContainer from './containers/AppContainer.js';
 
-ReactDOM.render(
+const photoCarousel = (
   <Provider store={store}>
     <AppContainer />
-  </Provider>,
-  document.getElementById('app')
- );
+  </Provider>
+);
+
+ReactDOM.render(
+  photoCarousel,
+  document.getElementById('app'),
+);
