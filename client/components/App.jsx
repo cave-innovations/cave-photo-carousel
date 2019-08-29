@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import Gallery from './Gallery/Gallery.jsx';
 import GalleryContainer from '../containers/GalleryContainer';
 import Modal from './Modal/Modal.jsx';
@@ -17,7 +18,11 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getListingData(exampleData.exampleData[0]);
+    const listingNum = parseInt(document.baseURI.slice(22, document.baseURI.length - 1));
+    axios.get(`/api/photos/${listingNum}`)
+      .then((response) => {
+        this.props.getListingData(response.data[0]);
+      });
   }
 
   componentDidUpdate(prevProps) {

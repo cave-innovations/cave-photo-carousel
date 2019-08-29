@@ -12,7 +12,10 @@ const insert = (db, callback) => {
     // Sets fake description, photo list, and photo count for each listing
     const desc = `${faker.lorem.word().toUpperCase()} at ${faker.address.city()}`;
     const photoList = [`https://photo-carousel.s3-us-west-1.amazonaws.com/building-${i}.jpeg`];
-    const photoCount = Math.floor(Math.random() * 100);
+    let photoCount = Math.floor(Math.random() * 100);
+    if (photoCount < 5) {
+      photoCount += 5;
+    }
     for (let j = 0; j < photoCount; j += 1) {
       const randomPhoto = `https://photo-carousel.s3-us-west-1.amazonaws.com/building-${(Math.floor(Math.random() * 100) + 1)}.jpeg`;
       if (!photoList.includes(randomPhoto)) {
