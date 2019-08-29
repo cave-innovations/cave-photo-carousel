@@ -71,5 +71,4 @@ const Gallery = ({
     <ButtonStyle type="button" onClick={modalView}>View Photos</ButtonStyle>
   </div>
 );
-
 export default Gallery;

@@ -49,7 +49,7 @@ const Verified = styled.div`
 `;
 
 const Description = (props) => (
-  <DescriptionWrapper>
+  <DescriptionWrapper id="description">
     <IndexCounter>
       {props.currentIndex + 1}
       {' '}

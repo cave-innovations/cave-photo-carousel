@@ -89,7 +89,7 @@ class MainDisplay extends React.Component {
 
   render() {
     return (
-      <ModalLeft>
+      <ModalLeft id="main-display">
         <LeftButtonWrapper>
           <LeftButton onClick={this.props.prev}>
             <LeftArrow>

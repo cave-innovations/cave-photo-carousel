@@ -88,8 +88,8 @@ class Modal extends React.Component {
     window.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown(event) {
-    switch (event.code) {
+  handleKeyDown(e) {
+    switch (e.code) {
       case 'ArrowLeft':
         this.prevPhoto();
         break;
@@ -137,9 +137,9 @@ class Modal extends React.Component {
     return (
       <ModalView>
         <ModalLeftContainer>
-          <MainDisplay prev={this.prevPhoto} next={this.nextPhoto} current={this.state.photos[this.state.currentIndex]} />
+          <MainDisplay id="main-display" prev={this.prevPhoto} next={this.nextPhoto} current={this.state.photos[this.state.currentIndex]} />
         </ModalLeftContainer>
-        <XButton onClick={this.props.modalView}>
+        <XButton id="x-button" onClick={this.props.modalView}>
           <svg
             viewBox="0 0 24 24"
             role="img"
@@ -153,9 +153,9 @@ class Modal extends React.Component {
           </svg>
         </XButton>
         <ModalCarouselContainer>
-          <Carousel currentIndex={this.props.currentIndex} current={this.state.current} photos={this.state.photos} clickPhoto={this.clickPhoto} />
+          <Carousel id="carousel" currentIndex={this.props.currentIndex} current={this.state.current} photos={this.state.photos} clickPhoto={this.clickPhoto} />
         </ModalCarouselContainer>
-        <Description description={this.state.description} currentIndex={this.props.currentIndex} photos={this.state.photos} />
+        <Description id="description" description={this.state.description} currentIndex={this.props.currentIndex} photos={this.state.photos} />
       </ModalView>
     );
   }

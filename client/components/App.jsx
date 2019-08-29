@@ -18,10 +18,6 @@ class App extends React.Component {
 
   componentDidMount() {
     this.props.getListingData(exampleData.exampleData[0]);
-    // this.setState({
-    //   data: this.props.listingData,
-    //   flag: true,
-    // });
   }
 
   componentDidUpdate(prevProps) {

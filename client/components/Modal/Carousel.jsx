@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import CarouselItem from './CarouselItem.jsx';
-// width: 386.53px;
+
 const CarouselWrapper = styled.div`
   position: relative;
   top: 22%;
@@ -25,7 +25,7 @@ const CarouselSlider = styled.div`
 `;
 
 const Carousel = (props) => (
-  <div>
+  <div id="carousel">
     <CarouselWrapper>
       <CarouselSlider>
         <CarouselSliderWrapper style={{ transform: `translateX(-${props.currentIndex * (100 / props.photos.length)}%)` }}>

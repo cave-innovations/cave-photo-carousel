@@ -27,7 +27,6 @@ const GalleryItemSml = ({
     {galleryHover && (galleryHoverItem !== parseInt(id)) && <GalleryItemSmall id={id} style={{ filter: 'brightness(50%)' }} alt="" src={photo} />}
     {galleryHover && (galleryHoverItem === parseInt(id)) && <GalleryItemSmall id={id} alt="" src={photo} />}
     {!galleryHover && <GalleryItemSmall id={id} alt="" src={photo} />}
-    {/* <GalleryItemSmall id={id} alt="" src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-chocolate-chip-cookies-horizontal-1529964207.jpg" /> */}
   </GalleryItemSmallContainer>
 );
 
