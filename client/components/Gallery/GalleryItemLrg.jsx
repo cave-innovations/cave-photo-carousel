@@ -4,8 +4,8 @@ import styled from 'styled-components';
 const GalleryItemLargeContainer = styled.div`
   display: flex;
   height: 100%;
-  width: 100%;
-  border: 1px solid rgb(83, 83, 83);
+  width: 99.7%;
+  border: 1px solid #484848;
   overflow: hidden;
 `;
 
@@ -14,45 +14,24 @@ const GalleryItemLarge = styled.img`
   height: 100%;
   width: 100%;
   position: relative;
-  transition: transform .5s;
+  transition: transform .5s, filter .5s;
+  transition-delay: .1s;
 
   &:hover {
     transform: scale(1.05);
   }
+  ${({ galleryHover, galleryHoverItem }) => galleryHover && galleryHoverItem !== 1 && `
+    filter: brightness(70%);
+  `}
 `;
-
-// const GalleryItemLargeDim = styled.img`
-//   display: flex;
-//   height: 100%;
-//   width: 100%;
-//   filter: brightness(50%);
-//   transition: filter .5s;
-
-//   &:hover {
-//     filter: brightness(100%);
-//   }
-// `;
-
 
 const GalleryItemLrg = ({
   galleryHover, galleryHoverItem, handleHoverItem, modalView, change, photo,
 }) => (
   <div>
-    {galleryHover && galleryHoverItem !== 1 && (
-    <GalleryItemLargeContainer style={{ filter: 'brightness(50%)' }} onMouseOver={(e) => { handleHoverItem(parseInt(e.target.id)); }} onClick={() => { modalView(); change(0); }}>
-      <GalleryItemLarge id="1" alt="" src={photo} />
-    </GalleryItemLargeContainer>
-    )}
-    {galleryHover && galleryHoverItem === 1 && (
     <GalleryItemLargeContainer onMouseOver={(e) => { handleHoverItem(parseInt(e.target.id)); }} onClick={() => { modalView(); change(0); }}>
-      <GalleryItemLarge id="1" alt="" src={photo} />
+      <GalleryItemLarge id="1" alt="" src={photo} galleryHover={galleryHover} galleryHoverItem={galleryHoverItem} />
     </GalleryItemLargeContainer>
-    )}
-    {!galleryHover && (
-    <GalleryItemLargeContainer onMouseOver={(e) => { handleHoverItem(parseInt(e.target.id)); }} onClick={() => { modalView(); change(0); }}>
-      <GalleryItemLarge id="1" alt="" src={photo} />
-    </GalleryItemLargeContainer>
-    )}
   </div>
 );
 
