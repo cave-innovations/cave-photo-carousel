@@ -1,18 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 const GalleryItemSmallContainer = styled.div`
   display: flex;
-  height: 49.8%;
-  width: 49.7%;
+  height: 50.25%;
+  width: 50%;
   border: 1px solid #484848;
+  box-sizing: border-box;
   overflow: hidden;
 `;
 
 const GalleryItemSmall = styled.img`
   display: flex;
-  height: 101%;
-  width: 101%;
+  height: 100%;
+  width: 100%;
   transition: transform .5s, filter .5s;
   transition-delay: .1s, 0s;
   transition-property: transform, filter;

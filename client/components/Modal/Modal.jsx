@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import MainDisplay from './MainDisplay.jsx';
 import Carousel from './Carousel.jsx';
 import Description from './Description.jsx';

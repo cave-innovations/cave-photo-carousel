@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/cave', { useNewUrlParser: true });
-
+// for local
+// mongoose.connect('mongodb://localhost/cave', { useNewUrlParser: true });
+// for deployed
+mongoose.connect('mongodb://database/cave', { useNewUrlParser: true });
 const cavePhotosSchema = mongoose.Schema({
   listingId: Number,
   main: String,

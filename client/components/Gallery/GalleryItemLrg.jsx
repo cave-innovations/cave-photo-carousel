@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 const GalleryItemLargeContainer = styled.div`
   display: flex;
   height: 100%;
-  width: 99.7%;
+  width: 100%;
   border: 1px solid #484848;
   overflow: hidden;
 `;

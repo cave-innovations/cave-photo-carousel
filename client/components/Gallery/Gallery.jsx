@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import GalleryItemLrg from './GalleryItemLrg.jsx';
 import GalleryItemSml from './GalleryItemSml.jsx';
 import GalleryItemLrgContainer from '../../containers/GalleryItemLrgContainer';
@@ -7,27 +7,27 @@ import GalleryItemSmlContainer from '../../containers/GalleryItemSmlContainer';
 
 const GalleryContainer = styled.div`
   display: flex;
-  height: 442px;
   flex-flow: row;
+  height: 442px;
   width: 100%;
   cursor: pointer;
 `;
 
 const LargerContainer = styled.div`
   display: flex;
-  height: 440px;
+  height: 100%;
   width: 50%;
 `;
 
 const SmallContainer = styled.div`
   display: flex;
-  height: 440px;
+  height: 100%;
   width: 50%;
   flex-flow: row wrap;
   position: relative;
 `;
 
-const ButtonStyle = styled.button`
+const ViewPhotosButton = styled.button`
   position: absolute;
   top: 86.5%;
   left: 80.85%;
@@ -58,21 +58,24 @@ const ButtonStyle = styled.button`
 `;
 
 const Gallery = ({
-  handleHoverOff, handleHoverOn, handleHoverItemNull, modalView, change, listingData, data,
+  handleHoverOff, handleHoverOn, handleHoverItemNull, modalView, change, listingData, data, loaded,
 }) => (
-  <div>
-    <GalleryContainer onMouseOver={handleHoverOn} onMouseLeave={() => { handleHoverOff(); handleHoverItemNull(); }}>
-      <LargerContainer>
-        <GalleryItemLrgContainer modalView={modalView} change={change} photo={data.photos[0]} />
-      </LargerContainer>
-      <SmallContainer>
-        <GalleryItemSmlContainer id="2" modalView={modalView} change={change} photo={data.photos[1]} />
-        <GalleryItemSmlContainer id="3" modalView={modalView} change={change} photo={data.photos[2]} />
-        <GalleryItemSmlContainer id="4" modalView={modalView} change={change} photo={data.photos[3]} />
-        <GalleryItemSmlContainer id="5" modalView={modalView} change={change} photo={data.photos[4]} />
-        <ButtonStyle type="button" onClick={modalView}>View Photos</ButtonStyle>
-      </SmallContainer>
-    </GalleryContainer>
-  </div>
+  <GalleryContainer onMouseOver={handleHoverOn} onMouseLeave={() => { handleHoverOff(); handleHoverItemNull(); }}>
+    <LargerContainer>
+      {!loaded && <GalleryItemLrgContainer modalView={modalView} change={change} photo="" />}
+      {loaded && <GalleryItemLrgContainer modalView={modalView} change={change} photo={data.photos[0]} />}
+    </LargerContainer>
+    <SmallContainer>
+      {!loaded && <GalleryItemSmlContainer id="2" modalView={modalView} change={change} photo="" />}
+      {loaded && <GalleryItemSmlContainer id="2" modalView={modalView} change={change} photo={data.photos[1]} />}
+      {!loaded && <GalleryItemSmlContainer id="3" modalView={modalView} change={change} photo="" />}
+      {loaded && <GalleryItemSmlContainer id="3" modalView={modalView} change={change} photo={data.photos[2]} />}
+      {!loaded && <GalleryItemSmlContainer id="4" modalView={modalView} change={change} photo="" />}
+      {loaded && <GalleryItemSmlContainer id="4" modalView={modalView} change={change} photo={data.photos[3]} />}
+      {!loaded && <GalleryItemSmlContainer id="5" modalView={modalView} change={change} photo="" />}
+      {loaded && <GalleryItemSmlContainer id="5" modalView={modalView} change={change} photo={data.photos[4]} />}
+      <ViewPhotosButton type="button" onClick={modalView}>View Photos</ViewPhotosButton>
+    </SmallContainer>
+  </GalleryContainer>
 );
 export default Gallery;
