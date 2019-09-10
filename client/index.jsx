@@ -13,5 +13,7 @@ const photoCarousel = (
 
 ReactDOM.render(
   photoCarousel,
-  document.getElementById('app'),
+  document.getElementById('photo-carousel'),
 );
+
+// export default photoCarousel;

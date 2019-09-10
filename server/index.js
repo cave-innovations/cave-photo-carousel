@@ -1,9 +1,14 @@
 const express = require('express');
+const cors = require('cors');
+const compression = require('compression');
 const db = require('../database/index.js');
 
 const app = express();
 
-app.use('/:id', express.static('public'));
+app.use(cors());
+app.use(compression());
+app.use('/listing/:id', express.static('public'));
+app.use(express.static('public'));
 
 app.get('/api/photos/:id', (req, res) => {
   const num = req.params.id;
@@ -11,5 +16,6 @@ app.get('/api/photos/:id', (req, res) => {
     res.send(data);
   });
 });
+
 
 module.exports = app;

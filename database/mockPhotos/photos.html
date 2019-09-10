@@ -5,9 +5,9 @@
     <script type="text/javascript">
       var counter = 1;
       var get25 = () => {
-        if (counter <= 300) {
+        if (counter <= 100) {
           var img = document.createElement('img');
-          img.setAttribute('src', `https://loremflickr.com/1440/960/building?random=${counter}`);
+          img.setAttribute('src', `https://loremflickr.com/800/600/building?random=${counter}`);
           document.getElementById('photos').appendChild(img);
           counter++;
           get25();

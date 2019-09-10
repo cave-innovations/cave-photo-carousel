@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb');
 const faker = require('faker');
 
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb://database:27017';
 
 // Seeds fake data into database
 const insert = (db, callback) => {

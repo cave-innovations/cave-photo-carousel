@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 const ModalLeft = styled.div`
   display: flex;
@@ -77,15 +77,6 @@ class MainDisplay extends React.Component {
       mainDisplay: '',
     };
   }
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.current !== this.props.current) {
-  //     console.log('hi');
-  //     this.setState({
-  //       mainDisplay: this.props.current,
-  //     });
-  //   }
-  // }
 
   render() {
     return (

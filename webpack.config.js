@@ -1,11 +1,11 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './client/index.jsx',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js',
+    filename: 'main.js',
   },
   module: {
     rules: [
@@ -19,22 +19,6 @@ module.exports = {
           },
         },
       },
-      // {
-      //   test: /\.css$/i,
-      //   loader: ['style-loader', 'css-loader'],
-      // },
-      // {
-      //   test: /\.module\.css$/i,
-      //   use: [
-      //     'style-loader',
-      //     {
-      //       loader: 'css-loader',
-      //       options: {
-      //         modules: true,
-      //       },
-      //     },
-      //   ],
-      // },
     ],
   },
 };
