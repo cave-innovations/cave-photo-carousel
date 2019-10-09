@@ -1,5 +1,4 @@
 import React from 'react';
-// import styled from 'styled-components';
 import CarouselItem from './CarouselItem.jsx';
 
 const CarouselWrapper = styled.div`

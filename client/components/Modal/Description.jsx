@@ -1,5 +1,4 @@
 import React from 'react';
-// import styled from 'styled-components';
 
 const DescriptionWrapper = styled.div`
   position: absolute;
@@ -61,7 +60,7 @@ const Description = (props) => (
       {props.description}
     </ListingName>
     <Verified>
-      Photo Verified by Cave Innovations
+      Photo Verified by CaveInn
     </Verified>
   </DescriptionWrapper>
 );
