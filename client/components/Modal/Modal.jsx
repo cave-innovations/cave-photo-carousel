@@ -1,9 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import MainDisplay from './MainDisplay.jsx';
 import Carousel from './Carousel.jsx';
 import Description from './Description.jsx';
-import data from '../../data/exampledata.js';
 
 const ModalView = styled.div`
   display: flex;
@@ -18,8 +16,8 @@ const ModalView = styled.div`
 
 const XButton = styled.button`
   position: absolute;
-  top: 8.8%;
-  left: 93.95%;
+  top: 8.3%;
+  left: 93.9%;
   align-self: right;
   cursor: pointer  !important;
   background-color: transparent !important;

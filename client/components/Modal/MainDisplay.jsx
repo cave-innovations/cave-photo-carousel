@@ -1,12 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 
 const ModalLeft = styled.div`
   display: flex;
   position: relative;
-  top: 13%;
+  top: 15.5%;
   left: 0;
-  height: 525px;
+  height: 530px;
   width: 100%;
 `;
 
@@ -15,8 +14,8 @@ const MainDisplayView = styled.div`
   position: relative;
   cursor: pointer;
   height: 100%;
-  width: 74%;
-  border-radius: 20px;
+  width: 77%;
+  border-radius: 15px;
   overflow: hidden;
 `;
 
@@ -42,8 +41,8 @@ const LeftButton = styled.div`
 
 const LeftArrow = styled.div`
   position: absolute;
-  top: 47.85%;
-  left: 0%;
+  top: 47.5%;
+  left: 6%;
 `;
 
 const RightButtonWrapper = styled.div`
@@ -66,8 +65,8 @@ const RightButton = styled.div`
 
 const RightArrow = styled.div`
   position: absolute;
-  top: 47.85%;
-  left: 31.5%;
+  top: 47.5%;
+  left: 30%;
 `;
 
 class MainDisplay extends React.Component {
@@ -77,15 +76,6 @@ class MainDisplay extends React.Component {
       mainDisplay: '',
     };
   }
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.current !== this.props.current) {
-  //     console.log('hi');
-  //     this.setState({
-  //       mainDisplay: this.props.current,
-  //     });
-  //   }
-  // }
 
   render() {
     return (
