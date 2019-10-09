@@ -1,5 +1,4 @@
 import React from 'react';
-// import styled from 'styled-components';
 
 const GalleryItemSmallContainer = styled.div`
   display: flex;

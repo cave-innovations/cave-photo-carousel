@@ -1,9 +1,13 @@
 import React from 'react';
 import axios from 'axios';
-import Gallery from './Gallery/Gallery.jsx';
 import GalleryContainer from '../containers/GalleryContainer';
-import Modal from './Modal/Modal.jsx';
 import ModalContainer from '../containers/ModalContainer';
+
+const StyledApp = styled.div`
+  margin: 0px;
+  display: flex;
+  flex-flow: column;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -16,37 +20,35 @@ class App extends React.Component {
     this.changeCurrentIndex = this.changeCurrentIndex.bind(this);
   }
 
-  // parses uri to find listing #. Gets data for that listing from database and sets 'listingData' state in redux store
-  // ec2-54-67-90-66.us-west-1.compute.amazonaws.com
   componentDidMount() {
     // for local
-    // const splitURI = document.baseURI.split('/');
-    // const listingNum = parseInt(splitURI[splitURI.length - 2]);
-    // if (isNaN(listingNum) || listingNum < 1 || listingNum > 100) {
-    //   axios.get('http://localhost:3000/api/photos/1')
-    //     .then((response) => {
-    //       this.props.getListingData(response.data[0]);
-    //     });
-    // } else {
-    //   axios.get(`http://localhost:3000/api/photos/${listingNum}`)
-    //     .then((response) => {
-    //       this.props.getListingData(response.data[0]);
-    //     });
-    // }
-    // for deployed
     const splitURI = document.baseURI.split('/');
     const listingNum = parseInt(splitURI[splitURI.length - 2]);
     if (isNaN(listingNum) || listingNum < 1 || listingNum > 100) {
-      axios.get('http://ec2-54-67-90-66.us-west-1.compute.amazonaws.com:3000/api/photos/1')
+      axios.get('http://localhost:3000/api/photos/1')
         .then((response) => {
           this.props.getListingData(response.data[0]);
         });
     } else {
-      axios.get(`http://ec2-54-67-90-66.us-west-1.compute.amazonaws.com:3000/api/photos/${listingNum}`)
+      axios.get(`http://localhost:3000/api/photos/${listingNum}`)
         .then((response) => {
           this.props.getListingData(response.data[0]);
         });
     }
+    // for deployed
+    // const splitURI = document.baseURI.split('/');
+    // const listingNum = parseInt(splitURI[splitURI.length - 2]);
+    // if (isNaN(listingNum) || listingNum < 1 || listingNum > 100) {
+    //   axios.get('http://ec2-54-67-90-66.us-west-1.compute.amazonaws.com:3000/api/photos/1')
+    //     .then((response) => {
+    //       this.props.getListingData(response.data[0]);
+    //     });
+    // } else {
+    //   axios.get(`http://ec2-54-67-90-66.us-west-1.compute.amazonaws.com:3000/api/photos/${listingNum}`)
+    //     .then((response) => {
+    //       this.props.getListingData(response.data[0]);
+    //     });
+    // }
     window.addEventListener('DOMContentLoaded', (e) => {
       this.setState({
         loaded: true,
@@ -78,10 +80,10 @@ class App extends React.Component {
       );
     }
     return (
-      <div>
+      <StyledApp>
         {this.props.isClicked && <ModalContainer change={this.changeCurrentIndex} currentIndex={this.state.currentIndex} />}
         <GalleryContainer change={this.changeCurrentIndex} data={this.state.data} loaded={this.state.loaded} />
-      </div>
+      </StyledApp>
     );
   }
 }

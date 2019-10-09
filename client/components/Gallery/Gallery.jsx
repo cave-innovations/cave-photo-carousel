@@ -1,7 +1,4 @@
 import React from 'react';
-// import styled from 'styled-components';
-import GalleryItemLrg from './GalleryItemLrg.jsx';
-import GalleryItemSml from './GalleryItemSml.jsx';
 import GalleryItemLrgContainer from '../../containers/GalleryItemLrgContainer';
 import GalleryItemSmlContainer from '../../containers/GalleryItemSmlContainer';
 
@@ -11,6 +8,7 @@ const GalleryContainer = styled.div`
   height: 442px;
   width: 100%;
   cursor: pointer;
+  margin: 0px;
 `;
 
 const LargerContainer = styled.div`
