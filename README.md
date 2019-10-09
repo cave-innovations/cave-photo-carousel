@@ -1,13 +1,10 @@
-# Project Name
+# CaveInn Photo Carousel Module
 
-> Project description
+> Microservice for the photo carousel module of the CaveInn website
 
-## Related Projects
-
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+<p align='center'>
+  <img src="https://github.com/cave-innovations/photo-carousel/blob/master/caveinndemo.gif" width="700px" align="center"/>
+</p>
 
 ## Table of Contents
 
@@ -17,23 +14,18 @@
 
 ## Usage
 
-> Some usage instructions
+> npm install
+> npm run seed
+> npm start
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
 - Node 6.13.0
-- etc
+- MongoDB
 
-## Development
+## Related Projects
 
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
+  - https://github.com/cave-innovations/reservations
+  - https://github.com/cave-innovations/reviews
+  - https://github.com/cave-innovations/nearby
 
